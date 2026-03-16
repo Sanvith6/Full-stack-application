@@ -63,9 +63,10 @@
     <canvas id="particle-canvas"></canvas>
     <canvas id="energy-canvas"></canvas>
 
-    <!-- ============ NOISE + SCANLINE OVERLAY ============ -->
+    <!-- ============ NOISE + SCANLINE + SCAN OVERLAYS ============ -->
     <div class="noise-overlay"></div>
     <div class="scanline-overlay"></div>
+    <div class="scan-effect"></div>
 
     <!-- ============ MOUSE SPOTLIGHT ============ -->
     <div class="mouse-spotlight" id="mouse-spotlight"></div>
@@ -214,7 +215,7 @@
             </div>
 
             <!-- Hero Emblem (right side, desktop only) -->
-            <div class="hero-right">
+            <div class="hero-right" data-parallax-speed="0.03">
                 <div class="hero-emblem">
                     <svg class="emblem-svg" viewBox="0 0 400 400">
                         <!-- Outer orbit -->
@@ -594,6 +595,7 @@
 
     <!-- ============ FOOTER ============ -->
     <footer class="footer">
+        <div class="section-divider"></div>
         <div class="footer-inner">
             <div class="footer-left">
                 <div class="footer-logo">
@@ -605,11 +607,21 @@
                 </div>
                 <span class="footer-copy">&copy; 2026 Vanguard Protocol. All rights reserved.</span>
             </div>
+            <div class="footer-center">
+                <div class="footer-nav">
+                    <a href="#hero" class="footer-link link-hover">BASE</a>
+                    <a href="#agents" class="footer-link link-hover">AGENTS</a>
+                    <a href="#arsenal" class="footer-link link-hover">ARSENAL</a>
+                    <a href="#tactical" class="footer-link link-hover">TACTICAL</a>
+                    <a href="#comms" class="footer-link link-hover">COMMS</a>
+                </div>
+            </div>
             <div class="footer-right">
                 <div class="footer-status">
                     <div class="footer-status-dot"></div>
                     <span>ALL SYSTEMS OPERATIONAL</span>
                 </div>
+                <span class="footer-version">v2.6.0 // BUILD 2847</span>
             </div>
         </div>
     </footer>
