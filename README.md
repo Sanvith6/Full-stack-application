@@ -27,20 +27,63 @@ A full-stack web application featuring a **Valorant-inspired**, premium frontend
 - `/api/messages` — CRUD for a real-time communications feed
 - `/api/stats` — Application statistics
 
+## Prerequisites
+
+- **Python 3.9+** (Flask 3.1 requires Python ≥ 3.9)
+- **pip** (Python package manager, included with Python)
+
 ## Quick Start
 
 ```bash
-# Install dependencies
+# 1. Clone the repository
+git clone https://github.com/Sanvith6/Full-stack-application.git
+cd Full-stack-application
+
+# 2. (Recommended) Create and activate a virtual environment
+python -m venv venv
+# On macOS/Linux:
+source venv/bin/activate
+# On Windows:
+# venv\Scripts\activate
+
+# 3. Install dependencies
 pip install -r requirements.txt
 
-# Run the server
+# 4. Run the server
 python backend/app.py
 
-# Run with debug mode (development only)
+# Or run with debug mode (development only)
 python backend/app.py --debug
 ```
 
 Then open [http://localhost:5000](http://localhost:5000) in your browser.
+
+## Project Structure
+
+```
+Full-stack-application/
+├── backend/
+│   └── app.py              # Flask server & REST API
+├── frontend/
+│   ├── static/
+│   │   ├── css/            # Stylesheets (main, animations, components)
+│   │   └── js/             # Client-side scripts (app, particles, animations)
+│   └── templates/
+│       └── index.html       # Main HTML template
+├── requirements.txt         # Python dependencies
+└── README.md
+```
+
+## API Endpoints
+
+| Method | Endpoint         | Description                  |
+| ------ | ---------------- | ---------------------------- |
+| GET    | `/`              | Serves the main frontend     |
+| GET    | `/api/health`    | Server health check          |
+| GET    | `/api/stats`     | Application statistics       |
+| GET    | `/api/agents`    | Game-themed agent roster     |
+| GET    | `/api/messages`  | Retrieve stored messages     |
+| POST   | `/api/messages`  | Send a new message (JSON body: `{"text": "...", "author": "..."}`) |
 
 ## Tech Stack
 
