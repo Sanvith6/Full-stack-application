@@ -35,6 +35,9 @@ pip install -r requirements.txt
 
 # Run the server
 python backend/app.py
+
+# Run with debug mode (development only)
+python backend/app.py --debug
 ```
 
 Then open [http://localhost:5000](http://localhost:5000) in your browser.

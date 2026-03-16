@@ -240,9 +240,6 @@
 
             // Sweep
             sweepAngle += 0.015;
-            var sweepGrad = rCtx.createConicalGradient
-                ? null
-                : null;
 
             // Draw sweep as arc segment
             rCtx.beginPath();

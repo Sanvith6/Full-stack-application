@@ -166,4 +166,9 @@ def post_message():
 # ---------- Run ----------
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Run the Vanguard Protocol server")
+    parser.add_argument("--debug", action="store_true", help="Enable debug mode")
+    args = parser.parse_args()
+    app.run(debug=args.debug, host="0.0.0.0", port=5000)
