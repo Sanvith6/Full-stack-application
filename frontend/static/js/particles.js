@@ -14,7 +14,7 @@
     var IS_DESKTOP = window.innerWidth > 768;
 
     var PCONFIG = {
-        count: IS_DESKTOP ? 150 : Math.max(30, Math.floor((window.innerWidth * window.innerHeight) / 15000)),
+        count: IS_DESKTOP ? 150 : Math.min(150, Math.max(30, Math.floor((window.innerWidth * window.innerHeight) / 15000))),
         maxSize: 2.5,
         minSize: 0.3,
         speed: 0.22,
