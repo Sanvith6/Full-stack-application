@@ -1,0 +1,131 @@
+/* ============================================
+   VANGUARD PROTOCOL — Keyframe Animations
+   ============================================ */
+
+/* Hex draw */
+@keyframes draw-hex {
+    to { stroke-dashoffset: 0; }
+}
+
+/* Fade in */
+@keyframes fade-in {
+    to { opacity: 1; }
+}
+
+/* Scan line */
+@keyframes scan-move {
+    0%   { top: -2px; }
+    100% { top: 100%; }
+}
+
+/* Glow pulse (hero bg) */
+@keyframes glow-pulse {
+    0%   { opacity: 0.5; transform: translateX(-50%) scale(1); }
+    100% { opacity: 0.8; transform: translateX(-50%) scale(1.15); }
+}
+
+/* Pulse dot (status) */
+@keyframes pulse-dot {
+    0%, 100% { box-shadow: 0 0 4px var(--accent-cyan); }
+    50%      { box-shadow: 0 0 12px var(--accent-cyan); }
+}
+
+/* Scroll bounce */
+@keyframes scroll-bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
+    50%      { transform: translateX(-50%) translateY(8px); opacity: 1; }
+}
+
+/* Message slide-in */
+@keyframes msg-in {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Card reveal */
+@keyframes card-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Glitch effect for text */
+@keyframes glitch-1 {
+    0%   { clip-path: inset(40% 0 61% 0); transform: translate(-2px, 2px); }
+    20%  { clip-path: inset(92% 0 1% 0);  transform: translate(1px, -1px); }
+    40%  { clip-path: inset(43% 0 1% 0);  transform: translate(-1px, 2px); }
+    60%  { clip-path: inset(25% 0 58% 0);  transform: translate(2px, 1px); }
+    80%  { clip-path: inset(54% 0 7% 0);  transform: translate(-1px, -1px); }
+    100% { clip-path: inset(58% 0 43% 0);  transform: translate(0); }
+}
+
+@keyframes glitch-2 {
+    0%   { clip-path: inset(65% 0 13% 0); transform: translate(2px, -1px); }
+    20%  { clip-path: inset(10% 0 80% 0); transform: translate(-1px, 2px); }
+    40%  { clip-path: inset(72% 0 1% 0);  transform: translate(1px, -2px); }
+    60%  { clip-path: inset(31% 0 50% 0); transform: translate(-2px, 1px); }
+    80%  { clip-path: inset(1% 0 90% 0);  transform: translate(1px, 1px); }
+    100% { clip-path: inset(12% 0 60% 0); transform: translate(0); }
+}
+
+/* Horizontal slide in */
+@keyframes slide-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Float */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
+}
+
+/* Rotate glow */
+@keyframes rotate-glow {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Stat bar fill */
+@keyframes fill-bar {
+    from { width: 0%; }
+}
+
+/* Border dash animation */
+@keyframes dash-border {
+    to { stroke-dashoffset: 0; }
+}
+
+/* Shimmer effect */
+@keyframes shimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}

@@ -1,0 +1,92 @@
+/* ============================================
+   VANGUARD PROTOCOL — Extra Component Styles
+   Glitch, tooltips, and micro-interactions
+   ============================================ */
+
+/* Glitch hover effect on buttons */
+.glitch-hover {
+    position: relative;
+}
+.glitch-hover::before,
+.glitch-hover::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+.glitch-hover::before {
+    color: var(--accent-cyan);
+    z-index: 1;
+}
+.glitch-hover::after {
+    color: var(--accent-red);
+    z-index: 2;
+}
+.glitch-hover:hover::before {
+    opacity: 0.6;
+    animation: glitch-1 0.3s linear;
+}
+.glitch-hover:hover::after {
+    opacity: 0.6;
+    animation: glitch-2 0.3s linear;
+}
+
+/* Reveal animation class (added by JS) */
+.revealed {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Notification toast */
+.toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 200;
+    padding: 14px 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--accent-cyan-dim);
+    border-radius: 6px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    color: var(--accent-cyan);
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+    transform: translateX(120%);
+    transition: transform 0.4s var(--ease-out-expo);
+}
+.toast.show {
+    transform: translateX(0);
+}
+
+/* Cursor trail (visual flair) */
+.cursor-ring {
+    position: fixed;
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--accent-red-dim);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.15s ease-out, opacity 0.3s;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+}
+.cursor-ring.visible {
+    opacity: 1;
+}
+.cursor-ring.click {
+    transform: translate(-50%, -50%) scale(0.6);
+    border-color: var(--accent-cyan);
+}
+
+/* Responsive utility */
+@media (max-width: 768px) {
+    .cursor-ring {
+        display: none;
+    }
+}
