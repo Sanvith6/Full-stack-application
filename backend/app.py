@@ -109,6 +109,32 @@ def get_agents():
             ],
             "difficulty": 3,
         },
+        {
+            "id": 5,
+            "name": "Sova",
+            "role": "Initiator",
+            "origin": "Russia",
+            "abilities": [
+                "Shock Bolt",
+                "Recon Bolt",
+                "Owl Drone",
+                "Hunter's Fury",
+            ],
+            "difficulty": 2,
+        },
+        {
+            "id": 6,
+            "name": "Omen",
+            "role": "Controller",
+            "origin": "Unknown",
+            "abilities": [
+                "Paranoia",
+                "Dark Cover",
+                "Shrouded Step",
+                "From The Shadows",
+            ],
+            "difficulty": 3,
+        },
     ]
     return jsonify(agents)
 

@@ -1,131 +1,135 @@
 /* ============================================
-   VANGUARD PROTOCOL — Keyframe Animations
+   VANGUARD PROTOCOL — ELITE KEYFRAME ANIMATIONS
+   Premium, Valorant-tier motion design
    ============================================ */
 
-/* Hex draw */
-@keyframes draw-hex {
+/* --- Stroke Draw --- */
+@keyframes draw-stroke {
     to { stroke-dashoffset: 0; }
 }
 
-/* Fade in */
+/* --- Fade In --- */
 @keyframes fade-in {
+    from { opacity: 0; }
     to { opacity: 1; }
 }
 
-/* Scan line */
-@keyframes scan-move {
-    0%   { top: -2px; }
-    100% { top: 100%; }
+/* --- Letter Reveal --- */
+@keyframes letter-reveal {
+    from { opacity: 0; transform: scale(0.8); filter: blur(4px); }
+    to { opacity: 1; transform: scale(1); filter: blur(0); }
 }
 
-/* Glow pulse (hero bg) */
-@keyframes glow-pulse {
-    0%   { opacity: 0.5; transform: translateX(-50%) scale(1); }
-    100% { opacity: 0.8; transform: translateX(-50%) scale(1.15); }
+/* --- Loader Spin --- */
+@keyframes loader-spin {
+    to { transform: rotate(360deg); }
 }
 
-/* Pulse dot (status) */
+/* --- Loader Dots --- */
+@keyframes loader-dots {
+    0%, 80%, 100% { opacity: 0.2; transform: scale(0.6); }
+    40% { opacity: 1; transform: scale(1); }
+}
+
+/* --- Hero Glow Pulse --- */
+@keyframes hero-glow-pulse {
+    0%   { opacity: 0.4; transform: translateX(-50%) scale(1); }
+    100% { opacity: 0.7; transform: translateX(-50%) scale(1.2); }
+}
+
+/* --- Pulse Dot (status) --- */
 @keyframes pulse-dot {
-    0%, 100% { box-shadow: 0 0 4px var(--accent-cyan); }
-    50%      { box-shadow: 0 0 12px var(--accent-cyan); }
+    0%, 100% { opacity: 1; box-shadow: 0 0 4px currentColor; }
+    50%      { opacity: 0.6; box-shadow: 0 0 12px currentColor, 0 0 24px currentColor; }
 }
 
-/* Scroll bounce */
-@keyframes scroll-bounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
-    50%      { transform: translateX(-50%) translateY(8px); opacity: 1; }
+/* --- Scroll Float --- */
+@keyframes scroll-float {
+    0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.6; }
+    50%      { transform: translateX(-50%) translateY(10px); opacity: 1; }
 }
 
-/* Message slide-in */
-@keyframes msg-in {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+/* --- Scroll Wheel Move --- */
+@keyframes scroll-wheel-move {
+    0%   { top: 6px; opacity: 1; }
+    100% { top: 18px; opacity: 0; }
 }
 
-/* Card reveal */
-@keyframes card-reveal {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* --- Diagonal Drift --- */
+@keyframes diag-drift {
+    0%   { transform: rotate(30deg) translateY(0); }
+    100% { transform: rotate(30deg) translateY(-100px); }
 }
 
-/* Glitch effect for text */
+/* --- Emblem Rotate --- */
+@keyframes emblem-rotate {
+    to { transform: rotate(360deg); }
+}
+@keyframes emblem-rotate-rev {
+    to { transform: rotate(-360deg); }
+}
+
+/* --- Emblem Diamond Pulse --- */
+@keyframes emblem-diamond-pulse {
+    0%   { opacity: 0.4; transform: scale(1); }
+    100% { opacity: 0.7; transform: scale(1.05); }
+}
+
+/* --- Glitch Effects --- */
 @keyframes glitch-1 {
-    0%   { clip-path: inset(40% 0 61% 0); transform: translate(-2px, 2px); }
-    20%  { clip-path: inset(92% 0 1% 0);  transform: translate(1px, -1px); }
-    40%  { clip-path: inset(43% 0 1% 0);  transform: translate(-1px, 2px); }
-    60%  { clip-path: inset(25% 0 58% 0);  transform: translate(2px, 1px); }
-    80%  { clip-path: inset(54% 0 7% 0);  transform: translate(-1px, -1px); }
-    100% { clip-path: inset(58% 0 43% 0);  transform: translate(0); }
+    0%   { clip-path: inset(40% 0 61% 0); transform: translate(-3px, 2px); opacity: 0.7; }
+    20%  { clip-path: inset(92% 0 1% 0);  transform: translate(2px, -1px); }
+    40%  { clip-path: inset(43% 0 1% 0);  transform: translate(-1px, 3px); }
+    60%  { clip-path: inset(25% 0 58% 0);  transform: translate(3px, 1px); }
+    80%  { clip-path: inset(54% 0 7% 0);  transform: translate(-2px, -1px); }
+    100% { clip-path: inset(58% 0 43% 0);  transform: translate(0); opacity: 0; }
 }
-
 @keyframes glitch-2 {
-    0%   { clip-path: inset(65% 0 13% 0); transform: translate(2px, -1px); }
-    20%  { clip-path: inset(10% 0 80% 0); transform: translate(-1px, 2px); }
-    40%  { clip-path: inset(72% 0 1% 0);  transform: translate(1px, -2px); }
-    60%  { clip-path: inset(31% 0 50% 0); transform: translate(-2px, 1px); }
-    80%  { clip-path: inset(1% 0 90% 0);  transform: translate(1px, 1px); }
-    100% { clip-path: inset(12% 0 60% 0); transform: translate(0); }
+    0%   { clip-path: inset(65% 0 13% 0); transform: translate(3px, -1px); opacity: 0.7; }
+    20%  { clip-path: inset(10% 0 80% 0); transform: translate(-2px, 3px); }
+    40%  { clip-path: inset(72% 0 1% 0);  transform: translate(1px, -3px); }
+    60%  { clip-path: inset(31% 0 50% 0); transform: translate(-3px, 1px); }
+    80%  { clip-path: inset(1% 0 90% 0);  transform: translate(2px, 2px); }
+    100% { clip-path: inset(12% 0 60% 0); transform: translate(0); opacity: 0; }
 }
 
-/* Horizontal slide in */
-@keyframes slide-in-left {
-    from {
-        opacity: 0;
-        transform: translateX(-60px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+/* --- Message Slide In --- */
+@keyframes msg-slide-in {
+    from { opacity: 0; transform: translateX(-30px) scale(0.97); }
+    to   { opacity: 1; transform: translateX(0) scale(1); }
 }
 
-@keyframes slide-in-right {
-    from {
-        opacity: 0;
-        transform: translateX(60px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+/* --- Clip Reveal (title text) --- */
+@keyframes clip-reveal-in {
+    from { clip-path: inset(0 100% 0 0); }
+    to   { clip-path: inset(0 0% 0 0); }
 }
 
-/* Float */
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50%      { transform: translateY(-10px); }
-}
-
-/* Rotate glow */
-@keyframes rotate-glow {
-    0%   { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Stat bar fill */
-@keyframes fill-bar {
-    from { width: 0%; }
-}
-
-/* Border dash animation */
-@keyframes dash-border {
-    to { stroke-dashoffset: 0; }
-}
-
-/* Shimmer effect */
+/* --- Shimmer --- */
 @keyframes shimmer {
-    0%   { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
+    0%   { background-position: -300% 0; }
+    100% { background-position: 300% 0; }
+}
+
+/* --- Radar Sweep --- */
+@keyframes radar-sweep {
+    to { transform: rotate(360deg); }
+}
+
+/* --- Float --- */
+@keyframes float-gentle {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+}
+
+/* --- Scale In --- */
+@keyframes scale-in {
+    from { opacity: 0; transform: scale(0.9); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/* --- Border glow animation --- */
+@keyframes border-glow-pulse {
+    0%, 100% { border-color: var(--border-dim); box-shadow: none; }
+    50%      { border-color: var(--accent-red-dim); box-shadow: 0 0 20px var(--accent-red-glow); }
 }
