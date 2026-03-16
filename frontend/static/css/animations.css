@@ -1,135 +1,343 @@
-/* ============================================
+/* ================================================================
    VANGUARD PROTOCOL — ELITE KEYFRAME ANIMATIONS
-   Premium, Valorant-tier motion design
-   ============================================ */
+   Premium, Valorant-tier motion design system
+   ================================================================ */
 
-/* --- Stroke Draw --- */
+
+/* ────────────────────────────────────────────
+   §1  CORE UTILITIES
+   ──────────────────────────────────────────── */
+
+/* Stroke Draw — SVG path reveal */
 @keyframes draw-stroke {
     to { stroke-dashoffset: 0; }
 }
 
-/* --- Fade In --- */
+/* Fade In — universal opacity entrance */
 @keyframes fade-in {
     from { opacity: 0; }
-    to { opacity: 1; }
+    to   { opacity: 1; }
 }
 
-/* --- Letter Reveal --- */
+/* Letter Reveal — per-character pop with deblur */
 @keyframes letter-reveal {
     from { opacity: 0; transform: scale(0.8); filter: blur(4px); }
-    to { opacity: 1; transform: scale(1); filter: blur(0); }
+    to   { opacity: 1; transform: scale(1);   filter: blur(0); }
 }
 
-/* --- Loader Spin --- */
-@keyframes loader-spin {
-    to { transform: rotate(360deg); }
-}
-
-/* --- Loader Dots --- */
-@keyframes loader-dots {
-    0%, 80%, 100% { opacity: 0.2; transform: scale(0.6); }
-    40% { opacity: 1; transform: scale(1); }
-}
-
-/* --- Hero Glow Pulse --- */
-@keyframes hero-glow-pulse {
-    0%   { opacity: 0.4; transform: translateX(-50%) scale(1); }
-    100% { opacity: 0.7; transform: translateX(-50%) scale(1.2); }
-}
-
-/* --- Pulse Dot (status) --- */
-@keyframes pulse-dot {
-    0%, 100% { opacity: 1; box-shadow: 0 0 4px currentColor; }
-    50%      { opacity: 0.6; box-shadow: 0 0 12px currentColor, 0 0 24px currentColor; }
-}
-
-/* --- Scroll Float --- */
-@keyframes scroll-float {
-    0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.6; }
-    50%      { transform: translateX(-50%) translateY(10px); opacity: 1; }
-}
-
-/* --- Scroll Wheel Move --- */
-@keyframes scroll-wheel-move {
-    0%   { top: 6px; opacity: 1; }
-    100% { top: 18px; opacity: 0; }
-}
-
-/* --- Diagonal Drift --- */
-@keyframes diag-drift {
-    0%   { transform: rotate(30deg) translateY(0); }
-    100% { transform: rotate(30deg) translateY(-100px); }
-}
-
-/* --- Emblem Rotate --- */
-@keyframes emblem-rotate {
-    to { transform: rotate(360deg); }
-}
-@keyframes emblem-rotate-rev {
-    to { transform: rotate(-360deg); }
-}
-
-/* --- Emblem Diamond Pulse --- */
-@keyframes emblem-diamond-pulse {
-    0%   { opacity: 0.4; transform: scale(1); }
-    100% { opacity: 0.7; transform: scale(1.05); }
-}
-
-/* --- Glitch Effects --- */
-@keyframes glitch-1 {
-    0%   { clip-path: inset(40% 0 61% 0); transform: translate(-3px, 2px); opacity: 0.7; }
-    20%  { clip-path: inset(92% 0 1% 0);  transform: translate(2px, -1px); }
-    40%  { clip-path: inset(43% 0 1% 0);  transform: translate(-1px, 3px); }
-    60%  { clip-path: inset(25% 0 58% 0);  transform: translate(3px, 1px); }
-    80%  { clip-path: inset(54% 0 7% 0);  transform: translate(-2px, -1px); }
-    100% { clip-path: inset(58% 0 43% 0);  transform: translate(0); opacity: 0; }
-}
-@keyframes glitch-2 {
-    0%   { clip-path: inset(65% 0 13% 0); transform: translate(3px, -1px); opacity: 0.7; }
-    20%  { clip-path: inset(10% 0 80% 0); transform: translate(-2px, 3px); }
-    40%  { clip-path: inset(72% 0 1% 0);  transform: translate(1px, -3px); }
-    60%  { clip-path: inset(31% 0 50% 0); transform: translate(-3px, 1px); }
-    80%  { clip-path: inset(1% 0 90% 0);  transform: translate(2px, 2px); }
-    100% { clip-path: inset(12% 0 60% 0); transform: translate(0); opacity: 0; }
-}
-
-/* --- Message Slide In --- */
-@keyframes msg-slide-in {
-    from { opacity: 0; transform: translateX(-30px) scale(0.97); }
-    to   { opacity: 1; transform: translateX(0) scale(1); }
-}
-
-/* --- Clip Reveal (title text) --- */
-@keyframes clip-reveal-in {
-    from { clip-path: inset(0 100% 0 0); }
-    to   { clip-path: inset(0 0% 0 0); }
-}
-
-/* --- Shimmer --- */
-@keyframes shimmer {
-    0%   { background-position: -300% 0; }
-    100% { background-position: 300% 0; }
-}
-
-/* --- Radar Sweep --- */
-@keyframes radar-sweep {
-    to { transform: rotate(360deg); }
-}
-
-/* --- Float --- */
-@keyframes float-gentle {
-    0%, 100% { transform: translateY(0); }
-    50%      { transform: translateY(-8px); }
-}
-
-/* --- Scale In --- */
+/* Scale In — subtle zoom entrance */
 @keyframes scale-in {
     from { opacity: 0; transform: scale(0.9); }
     to   { opacity: 1; transform: scale(1); }
 }
 
-/* --- Border glow animation --- */
+/* Zoom In — more dramatic scale entrance */
+@keyframes zoom-in {
+    from { opacity: 0; transform: scale(0.6); filter: blur(6px); }
+    60%  { opacity: 1; transform: scale(1.04); filter: blur(0); }
+    to   { opacity: 1; transform: scale(1);   filter: blur(0); }
+}
+
+/* Clip Reveal — horizontal wipe-in for text / panels */
+@keyframes clip-reveal-in {
+    from { clip-path: inset(0 100% 0 0); }
+    to   { clip-path: inset(0 0% 0 0); }
+}
+
+
+/* ────────────────────────────────────────────
+   §2  DIRECTIONAL SLIDES
+   ──────────────────────────────────────────── */
+
+/* Slide Up */
+@keyframes slide-up {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Slide Down */
+@keyframes slide-down {
+    from { opacity: 0; transform: translateY(-40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Slide In Left */
+@keyframes slide-in-left {
+    from { opacity: 0; transform: translateX(-60px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Slide In Right */
+@keyframes slide-in-right {
+    from { opacity: 0; transform: translateX(60px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Message Slide In — chat / notification entrance */
+@keyframes msg-slide-in {
+    from { opacity: 0; transform: translateX(-30px) scale(0.97); }
+    to   { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+
+/* ────────────────────────────────────────────
+   §3  LOADERS & SPINNERS
+   ──────────────────────────────────────────── */
+
+/* Loader Spin — 360° infinite rotation */
+@keyframes loader-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Loader Dots — staggered scale-pulse for dot indicators */
+@keyframes loader-dots {
+    0%, 80%, 100% { opacity: 0.2; transform: scale(0.6); }
+    40%           { opacity: 1;   transform: scale(1); }
+}
+
+/* Radar Sweep — 360° rotation for radar-style UI */
+@keyframes radar-sweep {
+    to { transform: rotate(360deg); }
+}
+
+
+/* ────────────────────────────────────────────
+   §4  HERO & GLOW EFFECTS
+   ──────────────────────────────────────────── */
+
+/* Hero Glow Pulse — expanding radial glow behind hero text */
+@keyframes hero-glow-pulse {
+    0%   { opacity: 0.4; transform: translateX(-50%) scale(1); }
+    100% { opacity: 0.7; transform: translateX(-50%) scale(1.2); }
+}
+
+/* Border Glow Pulse — panel / card border highlight */
 @keyframes border-glow-pulse {
-    0%, 100% { border-color: var(--border-dim); box-shadow: none; }
-    50%      { border-color: var(--accent-red-dim); box-shadow: 0 0 20px var(--accent-red-glow); }
+    0%, 100% { border-color: var(--border-dim);      box-shadow: none; }
+    50%      { border-color: var(--accent-red-dim);   box-shadow: 0 0 20px var(--accent-red-glow); }
+}
+
+/* Neon Flicker — imperfect neon-sign flicker */
+@keyframes neon-flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+        text-shadow:
+            0 0 4px var(--accent-red, #ff4655),
+            0 0 12px var(--accent-red, #ff4655),
+            0 0 30px var(--accent-red-glow, rgba(255, 70, 85, 0.35));
+    }
+    20%, 24%, 55% {
+        opacity: 0.6;
+        text-shadow: none;
+    }
+}
+
+/* Energy Pulse — expanding ring that fades out */
+@keyframes energy-pulse {
+    0%   { transform: scale(0.8); opacity: 0.9; box-shadow: 0 0 0 0 var(--accent-red, #ff4655); }
+    50%  { transform: scale(1);   opacity: 0.5; box-shadow: 0 0 0 18px transparent; }
+    100% { transform: scale(1.1); opacity: 0;   box-shadow: 0 0 0 32px transparent; }
+}
+
+/* Breathe — subtle alive-feeling scale oscillation */
+@keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.035); }
+}
+
+
+/* ────────────────────────────────────────────
+   §5  STATUS & MICRO-INTERACTIONS
+   ──────────────────────────────────────────── */
+
+/* Pulse Dot — live-status indicator */
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1;   box-shadow: 0 0 4px currentColor; }
+    50%      { opacity: 0.6; box-shadow: 0 0 12px currentColor, 0 0 24px currentColor; }
+}
+
+/* Shake — error / invalid input feedback */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    15%      { transform: translateX(-6px); }
+    30%      { transform: translateX(5px); }
+    45%      { transform: translateX(-4px); }
+    60%      { transform: translateX(3px); }
+    75%      { transform: translateX(-2px); }
+    90%      { transform: translateX(1px); }
+}
+
+/* Typewriter Cursor — blinking caret */
+@keyframes typewriter-cursor {
+    0%, 49%  { border-color: currentColor; }
+    50%, 100% { border-color: transparent; }
+}
+
+
+/* ────────────────────────────────────────────
+   §6  SCROLL & NAVIGATION
+   ──────────────────────────────────────────── */
+
+/* Scroll Float — bounce-hover on scroll indicator */
+@keyframes scroll-float {
+    0%, 100% { transform: translateX(-50%) translateY(0);    opacity: 0.6; }
+    50%      { transform: translateX(-50%) translateY(10px); opacity: 1; }
+}
+
+/* Scroll Wheel Move — inner dot travel in mouse icon */
+@keyframes scroll-wheel-move {
+    0%   { top: 6px;  opacity: 1; }
+    100% { top: 18px; opacity: 0; }
+}
+
+/* Float Gentle — idle hover / card float */
+@keyframes float-gentle {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+}
+
+
+/* ────────────────────────────────────────────
+   §7  BACKGROUND & DECORATIVE MOTION
+   ──────────────────────────────────────────── */
+
+/* Diagonal Drift — repeating-line texture scroll */
+@keyframes diag-drift {
+    0%   { transform: rotate(30deg) translateY(0); }
+    100% { transform: rotate(30deg) translateY(-100px); }
+}
+
+/* Gradient Shift — slow background gradient crawl */
+@keyframes gradient-shift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Rotate Gradient — CSS @property angle rotation for conic/border gradients */
+@keyframes rotate-gradient {
+    to { --angle: 360deg; }
+}
+
+/* Particle Float — drifting ambient particles */
+@keyframes particle-float {
+    0%   { transform: translateY(0) translateX(0)    scale(1);   opacity: 0; }
+    10%  { opacity: 0.8; }
+    50%  { transform: translateY(-60px) translateX(20px) scale(1.15); opacity: 0.6; }
+    90%  { opacity: 0.2; }
+    100% { transform: translateY(-120px) translateX(-10px) scale(0.9); opacity: 0; }
+}
+
+/* Scan Line — horizontal HUD scan line travelling downward */
+@keyframes scan-line {
+    0%   { top: -2%;  opacity: 0; }
+    5%   { opacity: 0.7; }
+    95%  { opacity: 0.7; }
+    100% { top: 102%; opacity: 0; }
+}
+
+/* Data Stream — vertical scrolling data / numbers */
+@keyframes data-stream {
+    0%   { transform: translateY(0);     opacity: 0.6; }
+    100% { transform: translateY(-200%); opacity: 0; }
+}
+
+
+/* ────────────────────────────────────────────
+   §8  EMBLEM & INSIGNIA
+   ──────────────────────────────────────────── */
+
+/* Emblem Rotate — clockwise orbit ring */
+@keyframes emblem-rotate {
+    to { transform: rotate(360deg); }
+}
+
+/* Emblem Rotate Reverse — counter-clockwise orbit ring */
+@keyframes emblem-rotate-rev {
+    to { transform: rotate(-360deg); }
+}
+
+/* Emblem Diamond Pulse — inner gem breathe */
+@keyframes emblem-diamond-pulse {
+    0%   { opacity: 0.4; transform: scale(1); }
+    100% { opacity: 0.7; transform: scale(1.05); }
+}
+
+
+/* ────────────────────────────────────────────
+   §9  GLITCH & DISTORTION
+   ──────────────────────────────────────────── */
+
+/* Glitch 1 — clip-path slice + shift (red channel) */
+@keyframes glitch-1 {
+    0%   { clip-path: inset(40% 0 61% 0); transform: translate(-3px, 2px);  opacity: 0.7; }
+    20%  { clip-path: inset(92% 0 1% 0);  transform: translate(2px, -1px); }
+    40%  { clip-path: inset(43% 0 1% 0);  transform: translate(-1px, 3px); }
+    60%  { clip-path: inset(25% 0 58% 0); transform: translate(3px, 1px); }
+    80%  { clip-path: inset(54% 0 7% 0);  transform: translate(-2px, -1px); }
+    100% { clip-path: inset(58% 0 43% 0); transform: translate(0);          opacity: 0; }
+}
+
+/* Glitch 2 — clip-path slice + shift (cyan channel) */
+@keyframes glitch-2 {
+    0%   { clip-path: inset(65% 0 13% 0); transform: translate(3px, -1px);  opacity: 0.7; }
+    20%  { clip-path: inset(10% 0 80% 0); transform: translate(-2px, 3px); }
+    40%  { clip-path: inset(72% 0 1% 0);  transform: translate(1px, -3px); }
+    60%  { clip-path: inset(31% 0 50% 0); transform: translate(-3px, 1px); }
+    80%  { clip-path: inset(1% 0 90% 0);  transform: translate(2px, 2px); }
+    100% { clip-path: inset(12% 0 60% 0); transform: translate(0);          opacity: 0; }
+}
+
+/* Chromatic Aberration — RGB channel split */
+@keyframes chromatic-aberration {
+    0%   { text-shadow:  2px 0 rgba(255, 0, 0, 0.7), -2px 0 rgba(0, 255, 255, 0.7); }
+    25%  { text-shadow: -1px 1px rgba(255, 0, 0, 0.5),  1px -1px rgba(0, 255, 255, 0.5); }
+    50%  { text-shadow:  1px -2px rgba(255, 0, 0, 0.6), -1px 2px rgba(0, 255, 255, 0.6); }
+    75%  { text-shadow: -2px 0 rgba(255, 0, 0, 0.4),  2px 0 rgba(0, 255, 255, 0.4); }
+    100% { text-shadow:  2px 0 rgba(255, 0, 0, 0.7), -2px 0 rgba(0, 255, 255, 0.7); }
+}
+
+/* Text Scramble Flicker — random opacity stutter for decode/decrypt effects */
+@keyframes text-scramble-flicker {
+    0%        { opacity: 0.3; }
+    8%        { opacity: 1; }
+    12%       { opacity: 0.4; }
+    20%       { opacity: 0.9; }
+    28%       { opacity: 0.2; }
+    33%       { opacity: 1; }
+    45%       { opacity: 0.7; }
+    52%       { opacity: 0.3; }
+    60%       { opacity: 1; }
+    68%       { opacity: 0.5; }
+    75%       { opacity: 0.9; }
+    82%       { opacity: 0.3; }
+    90%       { opacity: 1; }
+    100%      { opacity: 0.85; }
+}
+
+
+/* ────────────────────────────────────────────
+   §10  SHIMMER & HOLO EFFECTS
+   ──────────────────────────────────────────── */
+
+/* Shimmer — loading / skeleton-screen highlight sweep */
+@keyframes shimmer {
+    0%   { background-position: -300% 0; }
+    100% { background-position: 300% 0; }
+}
+
+/* Holo Shimmer — rainbow / holographic card sheen */
+@keyframes holo-shimmer {
+    0%   { background-position: 0% 50%;   filter: hue-rotate(0deg)   brightness(1); }
+    50%  { background-position: 100% 50%; filter: hue-rotate(45deg)  brightness(1.1); }
+    100% { background-position: 0% 50%;   filter: hue-rotate(0deg)   brightness(1); }
+}
+
+/* Border Trace — a highlight dot travelling along a rectangular border */
+@keyframes border-trace {
+    0%   { background-position: 0% 0; }
+    25%  { background-position: 100% 0; }
+    50%  { background-position: 100% 100%; }
+    75%  { background-position: 0 100%; }
+    100% { background-position: 0% 0; }
 }
