@@ -321,12 +321,6 @@
 /* =============================================
    18. Animated Border Container
    ============================================= */
-@property --angle {
-    syntax: '<angle>';
-    initial-value: 0deg;
-    inherits: false;
-}
-
 .animated-border {
     position: relative;
 }
